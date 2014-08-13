@@ -26,7 +26,11 @@ The general approach is as follows:
 
 5. write the summarized data as a text file (cleaned_set.txt)
 
+VARIANTS:
 
+The script includes code for two options of generating the cleaned data. In the first one, only features ending with '-mean()' or '-std()' are included. Derived means are ignored. For the second option, all feature names with 'mean' and 'std' substrings are included. Depending on which version of the cleaned data is prefered, the relevant code can be uncommented.
+
+The code book contains details of all the variables included in option 2.
 
 REQUIRED PACKAGES:
 

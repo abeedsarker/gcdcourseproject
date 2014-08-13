@@ -16,7 +16,10 @@ all_sub <-rbind(train_sub,test_sub)
 #load the list of features
 features_list <- read.table("./getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/features.txt")
 #collect only mean and std data
-sel_features <- grep(pattern = "[^[:alnum:]]mean[^[:alnum:]]|[^[:alnum:]]std[^[:alnum:]]",features_list$V2, perl=TRUE,value=FALSE)
+##*option 1: onlye -mean() and -std() functions are included. Derived means are not included. 
+#sel_features <- grep(pattern = "[^[:alnum:]]mean[^[:alnum:]]|[^[:alnum:]]std[^[:alnum:]]",features_list$V2, perl=TRUE,value=FALSE)
+##*Option 2: ALL variables mentioning mean and std are included
+sel_features <- grep(pattern = "mean|std|Mean",features_list$V2, perl=TRUE,value=FALSE)
 
 #TASK 3,4: USE DESCRIPTIVE ACTIVITY NAMES TO LABEL THE ACTIVIES IN THE DATA SET
 sel_x_data <- all_X[,sel_features] 
